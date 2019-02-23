@@ -15,9 +15,9 @@ import java.util.Random;
 public class Cliente {
     
     //Atributos
-    private String nif;
-    private String nombre;
-    private String apellidos;
+    private static String nif;
+    private static String nombre;
+    private static String apellidos;
     
     //Metodos
     public Cliente(String nif, String nombre, String apellidos) {
@@ -92,4 +92,38 @@ public class Cliente {
         return "Cliente{" + "nif=" + nif + ", nombre=" + nombre + ", apellidos=" + apellidos + '}';
     }
     
+    public static void clienteAleatorio(){
+    
+           Random aleatorio=new Random();
+        
+        char[] nif=new char[9];
+        String[] nombre={"Raul", "Jose", "Juan", "Hector", "Daniel", "Alejandro", "Victor", "Ana", "Maria", "Paula", "Roberta", "Lucia", "Lidia"};
+        String[] apellido={"Ramirez", "Rios", "Gonzalez", "Aguilar", "Garcia", "Lopez", "Ruiz", "Cabas", "Torres", "Bernal", "Sanchez", "Morales", "Sierra", "Perez"};
+        int numAlea;
+        
+        //Entramos en un bucle for para seleccionar los numeros del nif. Al salir del bucle 
+        //le damos una letra aleatoria
+        for(int x=0;x<nif.length-1;x++){
+            numAlea=aleatorio.nextInt(10)+48;
+            nif[x]=(char) numAlea;
+        }
+        
+        //Al ultimo hueco del array nif le asignamos una letra aleatoria
+        int letraAlea;
+        letraAlea=aleatorio.nextInt(25)+65;
+        nif[8]=(char)letraAlea;
+        
+        Cliente.nif=Arrays.toString(nif);
+        
+        
+        
+        //Elegimos un numero aleatorio para seleccionar el nombre y dos aleatorios para los dos apellidos
+        int nom=aleatorio.nextInt(nombre.length-1);
+        int ape1=aleatorio.nextInt(apellido.length-1);
+        int ape2=aleatorio.nextInt(apellido.length-1);
+        
+        Cliente.nombre=nombre[nom];
+        Cliente.apellidos=apellido[ape1]+apellido[ape2];
+        System.out.println("Cliente : "+Cliente.nombre+" "+Cliente.apellidos+" con DNI : "+Cliente.nif);
+    }
 }

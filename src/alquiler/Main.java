@@ -51,8 +51,13 @@ public class Main {
 //        e1.ordenarVehiculos();
 
         
-        Cliente.clienteAleatorio();
-        Vehiculo.vehiculoAleatorio();
+//        Cliente.clienteAleatorio();
+//        Vehiculo.vehiculoAleatorio();
+        Empresa e = new Empresa("0908123-", "", "");
+        e.fillClientes();
+        
+        
+        
         
         
         

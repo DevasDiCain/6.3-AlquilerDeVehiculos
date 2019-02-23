@@ -6,6 +6,7 @@
 package alquiler;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Empresa {
 
@@ -19,10 +20,16 @@ public class Empresa {
     private int totalClientes;
     private Cliente[] clientes;
 
+    //ArrayList que guardará la lista de clientes aleatorios
+    private ArrayList<Cliente> clientesAlea;
+
     /*Atributos para controlar el total de vehiculos disponibles para alquilar en
     la empresa y array de almacenamiento para los objetos Vehiculo*/
     private int totalVehiculos;
     private Vehiculo[] vehiculos;
+
+    //ArrayList que guardará la lista de vehículos aleatorios
+    private ArrayList<Vehiculo> vehiculosAlea;
 
     /*Atributos para controJose", "Juan", "Hector", "Daniel", "Alejandro", "Victor", "Ana", "Maria", "Paula", "Roberta", "Lucia", "Lidia"};
         String[] apellido={"Ramirez", "Rios", "Glar el histórico de alquileres: total de alquileres
@@ -48,6 +55,9 @@ public class Empresa {
         //Inicialmente la empresa no tiene alquileres
         this.totalAlquileres = 0;
         this.alquileres = new VehiculoAlquilado[100];
+        
+        this.clientesAlea= new ArrayList<Cliente>(25);
+        this.vehiculosAlea= new ArrayList<Vehiculo>(25);
     }
 
     //Método para registrar un cliente
@@ -201,6 +211,22 @@ public class Empresa {
         this.totalAlquileres = totalAlquileres;
     }
 
+    public ArrayList<Cliente> getClientesAlea() {
+        return clientesAlea;
+    }
+
+    public void setClientesAlea(ArrayList<Cliente> clientesAlea) {
+        this.clientesAlea = clientesAlea;
+    }
+
+    public ArrayList<Vehiculo> getVehiculosAlea() {
+        return vehiculosAlea;
+    }
+
+    public void setVehiculosAlea(ArrayList<Vehiculo> vehiculosAlea) {
+        this.vehiculosAlea = vehiculosAlea;
+    }
+
     public VehiculoAlquilado[] getAlquileres() {
         return alquileres;
     }
@@ -266,11 +292,11 @@ public class Empresa {
     }
 
     public int busquedaNif(String nif) {
-        int posicion=0, inicio=0;
-        int end=nif.length();
+        int posicion = 0, inicio = 0;
+        int end = nif.length();
         while (inicio <= end) {
             posicion = (inicio + end) / 2;
-            if (this.clientes[posicion].getNif().compareTo(nif)==0 ) {
+            if (this.clientes[posicion].getNif().compareTo(nif) == 0) {
                 return posicion;
             } else if (this.clientes[posicion].getNif().compareTo(nif) < 0) {
                 inicio = posicion + 1;
@@ -280,13 +306,13 @@ public class Empresa {
         }
         return -1;
     }
-    
+
     public int busquedaMatrícula(String matricula) {
-        int posicion=0, inicio=0;
-        int end=matricula.length();
+        int posicion = 0, inicio = 0;
+        int end = matricula.length();
         while (inicio <= end) {
             posicion = (inicio + end) / 2;
-            if (this.clientes[posicion].getNif().compareTo(matricula)==0 ) {
+            if (this.clientes[posicion].getNif().compareTo(matricula) == 0) {
                 return posicion;
             } else if (this.clientes[posicion].getNif().compareTo(matricula) < 0) {
                 inicio = posicion + 1;
@@ -296,5 +322,14 @@ public class Empresa {
         }
         return -1;
     }
-}
 
+    //Método de clase, en Empresa, que llene un arraylist de 25 Clientes con objetos aleatorios.
+    public void fillClientes() {
+        for (int i = 0; i < 25; i++) {
+            this.clientesAlea.add( Cliente.clienteAleatorio());
+            System.out.println(this.clientesAlea.get(i));
+        }
+    }
+    //Método de clase, en Empresa, que llene un arraylist de 25 Vehículos con objetos aleatorios.
+
+}

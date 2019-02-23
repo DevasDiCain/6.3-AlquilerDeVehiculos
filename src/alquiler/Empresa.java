@@ -331,5 +331,10 @@ public class Empresa {
         }
     }
     //Método de clase, en Empresa, que llene un arraylist de 25 Vehículos con objetos aleatorios.
-
+    public void fillVehiculos(){
+        for  (int i = 0 ; i<25;i++){
+            this.vehiculosAlea.add(Vehiculo.vehiculoAleatorio());
+            System.out.println(this.vehiculosAlea.get(i));
+              }
+    }
 }

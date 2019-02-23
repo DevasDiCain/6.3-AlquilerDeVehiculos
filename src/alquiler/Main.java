@@ -55,7 +55,7 @@ public class Main {
 //        Vehiculo.vehiculoAleatorio();
         Empresa e = new Empresa("0908123-", "", "");
         e.fillClientes();
-        
+        e.fillVehiculos();
         
         
         

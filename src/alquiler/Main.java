@@ -52,6 +52,7 @@ public class Main {
 
         
         Cliente.clienteAleatorio();
+        Vehiculo.vehiculoAleatorio();
         
         
         

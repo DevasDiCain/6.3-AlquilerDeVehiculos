@@ -6,6 +6,7 @@
 package alquiler;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -55,15 +56,42 @@ public class Main {
         
 //        Cliente.clienteAleatorio();
 //        Vehiculo.vehiculoAleatorio();
-        Empresa e = new Empresa("0908123-", "", "");
+
+//En la clase que contenga el método main() se debe:
+//Todos los resultados se deben mostrar por consola, comprobando que el comportamiento de los métodos es el correcto.
+        Scanner sn = new Scanner(System.in);
+        //Crear una empresa de alquiler con los datos que tú quieras.
+        Empresa e = new Empresa("A79380465", "Mercedes-benz", "www.mercedes-benz.es");
+        //Se llenarán los arraylist de clientes y vehículos de forma aleatoria usando los métodos pertinentes. 
         e.fillClientes();
-            System.out.println("--------------");
-       e.mostrarClientesAleas();
-       
-       e.fillVehiculos();
-        System.out.println("--------");
+        e.fillVehiculos();
+        //Una vez cargados los 25 clientes y 25 vehículos aleatorios, se mostrarán usando la consola.
+        e.mostrarClientesAleas();
         e.mostrarVehiculosAleas();
-      
+        //El programa solicitará por teclado el nif de un cliente, la matrícula de un vehículo y el número de días que se quiere alquilar.
+        System.out.println("Introduzca el nif del cliente");
+        String nifCliente=sn.nextLine();
+        System.out.println("Introduce la matrícula del coche");
+        String matriculaCliente=sn.nextLine();
+        System.out.println("Introduce el número de días que se quiere alquilar");
+        int numeroDias=sn.nextInt();
+        //El sistema registrará, usando el método apropiado, el alquiler anterior.
+        e.alquilarVehiculo(matriculaCliente, nifCliente, numeroDias);
+        //Se debe mostrar por consola el alquiler registrado.
+        System.out.println(e.getAlquileres());
+        //Posteriormente, se ordenarán los clientes y los vehículos usando los métodos apropiados. 
+        e.ordenarCarteraClientes();
+        e.ordenarCatalogoVehiculos();
+        //Se volverá a buscar otro cliente y otro vehículo, solicitando los datos al usuario, usando búsqueda binaria.
+        sn.nextInt();
+        System.out.println("¿Qué cliente desea buscar?");
+        String cliente=sn.nextLine();
+        System.out.println("¿Vehículo?");
+        String vehículo= sn.nextLine();
+        
+       
+            
+       
 
        
        

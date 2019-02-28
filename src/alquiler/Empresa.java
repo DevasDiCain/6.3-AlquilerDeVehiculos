@@ -402,6 +402,10 @@ public class Empresa {
         }
         return -1;
        }
+       //Método de búsqueda binaria por matrícula en el arraylist de vehículos. Este método estará en la clase Empresa
+       //y tendrá como parámetro la matrícula del Vehículo a buscar. 
+       //Devolverá la posición en el array que ocupa el vehículo si se encuentra o -1 si no está.
+
        public int busquedaMatriculaArrayList(String matricula){
        int posicion = 0, inicio = 0;
         int end = matricula.length();
@@ -417,5 +421,6 @@ public class Empresa {
         }
         return -1;
        }
+       
 
 }

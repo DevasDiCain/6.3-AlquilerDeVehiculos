@@ -382,4 +382,40 @@ public class Empresa {
        public void mostrarVehiculosAleas(){
            this.vehiculosAlea.forEach(System.out::println);
        }
+       
+       //Método de búsqueda binaria por nif en el arraylist de clientes. Este método estará en la clase Empresa 
+       //Y tendrá como parámetro el nif del cliente a buscar.
+       //Devolverá la posición en el array que ocupa el cliente si se encuentra o -1 si no está.
+       
+       public int busquedaNifArrayList(String nif){
+           int posicion = 0, inicio = 0;
+        int end = nif.length();
+        while (inicio <= end) {
+            posicion = (inicio + end) / 2;
+            if (this.clientesAlea.get(posicion).getNif().compareTo(nif) == 0) {
+                return posicion;
+            } else if (this.clientesAlea.get(posicion).getNif().compareTo(nif) < 0) {
+                inicio = posicion + 1;
+            } else {
+                end = posicion - 1;
+            }
+        }
+        return -1;
+       }
+       public int busquedaMatriculaArrayList(String matricula){
+       int posicion = 0, inicio = 0;
+        int end = matricula.length();
+        while (inicio <= end) {
+            posicion = (inicio + end) / 2;
+            if (this.vehiculosAlea.get(posicion).getMatricula().compareTo(matricula) == 0) {
+                return posicion;
+            } else if (this.vehiculosAlea.get(posicion).getMatricula().compareTo(matricula) < 0) {
+                inicio = posicion + 1;
+            } else {
+                end = posicion - 1;
+            }
+        }
+        return -1;
+       }
+
 }

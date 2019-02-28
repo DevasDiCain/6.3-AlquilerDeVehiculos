@@ -101,26 +101,29 @@ public class Cliente {
         System.out.println(Cliente.clienteAleatorio());
         System.out.println(Cliente.clienteAleatorio());
         System.out.println("--------------------------");
-        ArrayList<Cliente> as = new ArrayList(15);
+        ArrayList<Cliente> as = new ArrayList<>(15);
         
-            as.add(0,Cliente.clienteAleatorio());
-            as.add(1,Cliente.clienteAleatorio());
-            as.add(2,Cliente.clienteAleatorio());
-            as.add(3,Cliente.clienteAleatorio());
-            as.add(4,Cliente.clienteAleatorio());
-            as.add(5,Cliente.clienteAleatorio());
-            as.add(6,Cliente.clienteAleatorio());
-            as.add(7,Cliente.clienteAleatorio());
-            as.add(8,Cliente.clienteAleatorio());
-            as.add(9,Cliente.clienteAleatorio());
-            as.add(10,Cliente.clienteAleatorio());
-            as.add(11,Cliente.clienteAleatorio());
-            as.add(12,Cliente.clienteAleatorio());
-            as.add(13,Cliente.clienteAleatorio());
-            as.add(14,Cliente.clienteAleatorio());
-        
+//            as.add(0,Cliente.clienteAleatorio());
+//            as.add(1,Cliente.clienteAleatorio());
+//            as.add(2,Cliente.clienteAleatorio());
+//            as.add(3,Cliente.clienteAleatorio());
+//            as.add(4,Cliente.clienteAleatorio());
+//            as.add(5,Cliente.clienteAleatorio());
+//            as.add(6,Cliente.clienteAleatorio());
+//            as.add(7,Cliente.clienteAleatorio());
+//            as.add(8,Cliente.clienteAleatorio());
+//            as.add(9,Cliente.clienteAleatorio());
+//            as.add(10,Cliente.clienteAleatorio());
+//            as.add(11,Cliente.clienteAleatorio());
+//            as.add(12,Cliente.clienteAleatorio());
+//            as.add(13,Cliente.clienteAleatorio());
+//            as.add(14,Cliente.clienteAleatorio());
+                 as.add(new Cliente());
+                  as.add(new Cliente());
+                   as.add(new Cliente());
+   
         as.forEach(System.out::println);
-       
+     
 
     }
 }

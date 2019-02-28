@@ -7,6 +7,7 @@ package alquiler;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.function.Consumer;
 
 public class Empresa {
 
@@ -56,8 +57,8 @@ public class Empresa {
         this.totalAlquileres = 0;
         this.alquileres = new VehiculoAlquilado[100];
         
-        this.clientesAlea= new ArrayList<Cliente>(25);
-        this.vehiculosAlea= new ArrayList<Vehiculo>(25);
+        this.clientesAlea= new ArrayList();
+        this.vehiculosAlea= new ArrayList();
     }
 
     //Método para registrar un cliente
@@ -326,15 +327,59 @@ public class Empresa {
     //Método de clase, en Empresa, que llene un arraylist de 25 Clientes con objetos aleatorios.
     public void fillClientes() {
         for (int i = 0; i < 25; i++) {
-            this.clientesAlea.add( Cliente.clienteAleatorio());
+            this.clientesAlea.add(Cliente.clienteAleatorio());
             System.out.println(this.clientesAlea.get(i));
         }
     }
     //Método de clase, en Empresa, que llene un arraylist de 25 Vehículos con objetos aleatorios.
     public void fillVehiculos(){
         for  (int i = 0 ; i<25;i++){
-            this.vehiculosAlea.add(Vehiculo.vehiculoAleatorio());
+            this.vehiculosAlea.add( Vehiculo.vehiculoAleatorio());
             System.out.println(this.vehiculosAlea.get(i));
               }
     }
+//    Métodos de ordenación mediante la burbuja de los arraylist de clientes por nif y de vehículos por matrícula.
+//    Estos métodos se encontrarán en la clase Empresa y se llamarán ordenarCatalogoVehiculos() y ordenarCarteraClientes().
+
+       public void ordenarCarteraClientes(){
+       int valor = 0;
+        Cliente tmp = new Cliente();
+        System.out.println("-----------------");
+        System.out.println(clientesAlea.size());
+        for (int i = 0; i < clientesAlea.size() - 1; i++) {
+            for (int j = i + 1; i < clientesAlea.size(); i++) {
+                if (clientesAlea.get(i).getNif().compareTo(clientesAlea.get(j).getNif()) > 0) {
+                    tmp = clientesAlea.get(i);
+                    clientesAlea.set(i, clientesAlea.get(j));
+                    clientes[j] = tmp;
+                    
+                }
+
+            }
+        }
+       }
+       
+       public void ordenarCatalogoVehiculos(){
+           int valor = 0;
+        Vehiculo tmp = new Vehiculo();
+        System.out.println("-----------------");
+        System.out.println(vehiculosAlea.size());
+        for (int i = 0; i < vehiculosAlea.size() - 1; i++) {
+            for (int j = i + 1; i < vehiculosAlea.size(); i++) {
+                if (vehiculosAlea.get(i).getMatricula().compareTo(vehiculosAlea.get(j).getMatricula()) > 0) {
+                    tmp = vehiculosAlea.get(i);
+                    vehiculosAlea.set(i, vehiculosAlea.get(j));
+                    vehiculos[j] = tmp;
+                    
+        }
+            }
+        }
+       }
+       
+       public void mostrarClientesAleas(){
+           this.clientesAlea.forEach(System.out::println);
+       }
+       public void mostrarVehiculosAleas(){
+           this.vehiculosAlea.forEach(System.out::println);
+       }
 }

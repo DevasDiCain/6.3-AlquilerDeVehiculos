@@ -5,6 +5,8 @@
  */
 package alquiler;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author jriosaguilar
@@ -55,7 +57,16 @@ public class Main {
 //        Vehiculo.vehiculoAleatorio();
         Empresa e = new Empresa("0908123-", "", "");
         e.fillClientes();
-        e.fillVehiculos();
+            System.out.println("--------------");
+       e.mostrarClientesAleas();
+       
+       e.fillVehiculos();
+        System.out.println("--------");
+        e.mostrarVehiculosAleas();
+      
+
+       
+       
         
         
         

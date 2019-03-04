@@ -32,11 +32,11 @@ public class Empresa {
     //ArrayList que guardará la lista de vehículos aleatorios
     private ArrayList<Vehiculo> vehiculosAlea;
 
-    /*Atributos para controJose", "Juan", "Hector", "Daniel", "Alejandro", "Victor", "Ana", "Maria", "Paula", "Roberta", "Lucia", "Lidia"};
+    /*Atributos para Jose", "Juan", "Hector", "Daniel", "Alejandro", "Victor", "Ana", "Maria", "Paula", "Roberta", "Lucia", "Lidia"};
         String[] apellido={"Ramirez", "Rios", "Glar el histórico de alquileres: total de alquileres
     realizados y array de almacenamiento para los objetos VehiculoAlquilado*/
     private int totalAlquileres;
-    private VehiculoAlquilado[] alquileres;
+    private ArrayList <VehiculoAlquilado> alquileres;
 
     //Metodos
     /*Constructor parametrizado */
@@ -55,7 +55,7 @@ public class Empresa {
 
         //Inicialmente la empresa no tiene alquileres
         this.totalAlquileres = 0;
-        this.alquileres = new VehiculoAlquilado[100];
+        this.alquileres = new ArrayList <VehiculoAlquilado>(50);
         
         this.clientesAlea= new ArrayList();
         this.vehiculosAlea= new ArrayList();
@@ -116,8 +116,7 @@ public class Empresa {
         Vehiculo vehiculo = getVehiculo(matricula);
         if (vehiculo.isDisponible()) {
             vehiculo.setDisponible(false);
-            this.alquileres[this.totalAlquileres] = new VehiculoAlquilado(cliente, vehiculo, diaHoy(),
-                    mesHoy(), anioHoy(), dias);
+            this.alquileres.add(new VehiculoAlquilado(cliente,vehiculo,diaHoy(), mesHoy(), anioHoy(), dias));
             this.totalAlquileres++;
         }
     }
@@ -228,11 +227,11 @@ public class Empresa {
         this.vehiculosAlea = vehiculosAlea;
     }
 
-    public VehiculoAlquilado[] getAlquileres() {
+   public ArrayList<VehiculoAlquilado> getAlquileres() {
         return alquileres;
     }
 
-    public void setAlquileres(VehiculoAlquilado[] alquileres) {
+     public void setAlquileres(ArrayList <VehiculoAlquilado> alquileres) {
         this.alquileres = alquileres;
     }
 

@@ -86,8 +86,10 @@ public class Main {
         sn.nextInt();
         System.out.println("¿Qué cliente desea buscar?");
         String cliente=sn.nextLine();
+        e.busquedaNifArrayList(cliente);
         System.out.println("¿Vehículo?");
         String vehículo= sn.nextLine();
+        e.busquedaMatriculaArrayList(vehículo);
         
        
             

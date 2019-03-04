@@ -16,9 +16,9 @@ import java.util.Random;
 public class Cliente {
 
     //Atributos
-    private static String nif;
-    private static String nombre;
-    private static String apellidos;
+    private  String nif;
+    private  String nombre;
+    private  String apellidos;
 
     //Metodos
     public Cliente(String nif, String nombre, String apellidos) {

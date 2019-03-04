@@ -15,12 +15,12 @@ import java.util.Random;
 public class Vehiculo {
     
     //Atributos
-    private static String matricula;
-    private static String marca;
-    private static String modelo;
-    private static String color;
-    private static double tarifa;
-    private static boolean disponible;
+    private  String matricula;
+    private  String marca;
+    private  String modelo;
+    private  String color;
+    private  double tarifa;
+    private  boolean disponible;
     
     //Métodos
     //Constructor parametrizado

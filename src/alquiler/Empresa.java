@@ -328,14 +328,15 @@ public class Empresa {
     public void fillClientes() {
         for (int i = 0; i < 25; i++) {
             this.clientesAlea.add(Cliente.clienteAleatorio());
-            System.out.println(this.clientesAlea.get(i));
+            //System.out.println(this.clientesAlea.get(i));
         }
+        
     }
     //Método de clase, en Empresa, que llene un arraylist de 25 Vehículos con objetos aleatorios.
     public void fillVehiculos(){
         for  (int i = 0 ; i<25;i++){
             this.vehiculosAlea.add( Vehiculo.vehiculoAleatorio());
-            System.out.println(this.vehiculosAlea.get(i));
+           // System.out.println(this.vehiculosAlea.get(i));
               }
     }
 //    Métodos de ordenación mediante la burbuja de los arraylist de clientes por nif y de vehículos por matrícula.
@@ -377,7 +378,9 @@ public class Empresa {
        }
        
        public void mostrarClientesAleas(){
-           this.clientesAlea.forEach(System.out::println);
+           System.out.println(clientesAlea.size());
+           //this.clientesAlea.forEach(System.out::println);
+           for(Cliente x : clientesAlea){System.out.println(x);}
        }
        public void mostrarVehiculosAleas(){
            this.vehiculosAlea.forEach(System.out::println);
